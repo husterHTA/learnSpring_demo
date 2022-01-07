@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rikkei.mock_customers.dto.CustomerDTO;
 import com.rikkei.mock_customers.model.Customer;
 import com.rikkei.mock_customers.repository.CustomerRepository;
 
@@ -31,5 +32,9 @@ public class CustomerService {
 	
 	public void delete(long id) {
 		repo.deleteById(id);
+	}
+	
+	public List<CustomerDTO> getListCustomerDTO(){
+		return repo.getListCustomerDTO();
 	}
 }
